@@ -12,7 +12,7 @@ Projeto Java Spring Boot para gerenciamento básico de livros, desenvolvido para
 
 ### Funcionalidades
 - `CREATE`: Adicionar novos livros
-- `READ`: Listar todos os livros ou buscar por ID
+- `READ`: Listar todos os livros, buscar por ID ou atributos do livro.
 - `UPDATE`: Atualizar informações dos livros
 - `DELETE`: Remover livros do sistema
 
