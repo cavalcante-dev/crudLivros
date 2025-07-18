@@ -37,13 +37,15 @@ public class LivrosServicos {
     }
 
     public List<Livro> encontrarLivrosByAutor(String livroAutor) {
-        List<Livro> livros = livrosRepositorio.findByLivroAutorIgnoreCase(livroAutor);
-        return livros;
+        return livrosRepositorio.findByLivroAutorIgnoreCase(livroAutor);
     }
 
     public Optional<Livro> encontrarLivroByID(String livroID) {
-        var livro = livrosRepositorio.findById(UUID.fromString(livroID));
-        return livro;
+        return livrosRepositorio.findById(UUID.fromString(livroID));
+    }
+
+    public List<Livro> encontrarLivrosByGenero(String livroGenero) {
+        return livrosRepositorio.findByLivroGeneroIgnoreCase(livroGenero);
     }
 
     public void deletarLivroByID(String livroID) {
@@ -53,5 +55,6 @@ public class LivrosServicos {
             livrosRepositorio.deleteById(id);
         }
     }
+
 
 }

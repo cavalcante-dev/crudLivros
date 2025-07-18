@@ -39,6 +39,16 @@ public class LivrosControle {
         }
     }
 
+    @GetMapping("/livroGenero/{livroGenero}")
+    public ResponseEntity<List<Livro>> encontrarLivrosByGenero(@PathVariable("livroGenero") String livroGenero) {
+        List<Livro> livros = livrosServicos.encontrarLivrosByGenero(livroGenero);
+        if (!livros.isEmpty()) {
+            return ResponseEntity.ok(livros);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/{livroID}")
     public ResponseEntity<Livro> encontrarLivroByID(@PathVariable("livroID") String livroID) {
         var livro = livrosServicos.encontrarLivroByID(livroID);

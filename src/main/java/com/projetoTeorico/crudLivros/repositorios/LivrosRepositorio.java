@@ -9,5 +9,6 @@ import java.util.UUID;
 public interface LivrosRepositorio extends JpaRepository<Livro, UUID> {
 
     List<Livro> findByLivroAutorIgnoreCase(String livroAutor);
+    List<Livro> findByLivroGeneroIgnoreCase(String livroGenero);
 
 }
