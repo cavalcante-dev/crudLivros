@@ -36,6 +36,11 @@ public class LivrosServicos {
         return livrosRepositorio.findAll();
     }
 
+    public List<Livro> encontrarLivrosByAutor(String livroAutor) {
+        List<Livro> livros = livrosRepositorio.findByLivroAutorIgnoreCase(livroAutor);
+        return livros;
+    }
+
     public Optional<Livro> encontrarLivroByID(String livroID) {
         var livro = livrosRepositorio.findById(UUID.fromString(livroID));
         return livro;

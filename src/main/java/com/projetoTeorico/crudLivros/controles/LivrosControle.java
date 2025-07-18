@@ -23,10 +23,20 @@ public class LivrosControle {
         return ResponseEntity.created(URI.create("/v1/livros/" + livroID.toString())).build();
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<Livro>> listarLivros() {
         var livros = livrosServicos.listarLivros();
         return ResponseEntity.ok(livros);
+    }
+
+    @GetMapping("/livroAutor/{livroAutor}")
+    public ResponseEntity<List<Livro>> encontrarLivrosByAutor(@PathVariable("livroAutor") String livroAutor) {
+        List<Livro> livros = livrosServicos.encontrarLivrosByAutor(livroAutor);
+        if (!livros.isEmpty()) {
+            return ResponseEntity.ok(livros);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/{livroID}")

@@ -35,6 +35,14 @@ public class Livro {
     public Livro() {
     }
 
+    public String getLivroNome() {
+        return livroNome;
+    }
+
+    public void setLivroNome(String livroNome) {
+        this.livroNome = livroNome;
+    }
+
     public UUID getLivroID() {
         return livroID;
     }
