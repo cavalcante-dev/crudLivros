@@ -23,6 +23,7 @@ Projeto Java Spring Boot para gerenciamento básico de livros, desenvolvido para
 - Banco de Dados: MySQL 8
 - Gerenciamento: Maven
 - Testes: Spring Boot Test (Exemplos básicos incluídos)
+- 
 
 ### 📄 Licença
 Este projeto está sob a licença MIT - veja o arquivo LICENSE para detalhes.
