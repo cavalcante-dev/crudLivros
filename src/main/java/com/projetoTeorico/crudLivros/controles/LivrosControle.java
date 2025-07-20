@@ -2,6 +2,7 @@ package com.projetoTeorico.crudLivros.controles;
 
 import com.projetoTeorico.crudLivros.entidades.Livro;
 import com.projetoTeorico.crudLivros.modelos.CriarLivroDTO;
+import com.projetoTeorico.crudLivros.modelos.EditarLivroDTO;
 import com.projetoTeorico.crudLivros.serviços.LivrosServicos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -57,6 +58,13 @@ public class LivrosControle {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PutMapping("/{livroID}")
+    public ResponseEntity<Livro> editarLivroByID(@PathVariable("livroID") String livroID,
+                                                 @RequestBody EditarLivroDTO editarLivrDTO) {
+        livrosServicos.editarLivroByID(livroID, editarLivrDTO);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{livroID}")

@@ -2,6 +2,7 @@ package com.projetoTeorico.crudLivros.serviços;
 
 import com.projetoTeorico.crudLivros.entidades.Livro;
 import com.projetoTeorico.crudLivros.modelos.CriarLivroDTO;
+import com.projetoTeorico.crudLivros.modelos.EditarLivroDTO;
 import com.projetoTeorico.crudLivros.repositorios.LivrosRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,5 +57,28 @@ public class LivrosServicos {
         }
     }
 
+    public void editarLivroByID(String livroID, EditarLivroDTO editarLivrDTO) {
+
+        var id = UUID.fromString(livroID);
+        var livroEntidade = livrosRepositorio.findById(id);
+
+        if (livroEntidade.isPresent()) {
+            var livro = livroEntidade.get();
+            if (editarLivrDTO.livroNome() != null) {
+                livro.setLivroNome(editarLivrDTO.livroNome());
+            }
+            if (editarLivrDTO.livroGenero() != null) {
+                livro.setLivroGenero(editarLivrDTO.livroGenero());
+            }
+            if (editarLivrDTO.livroAutor() != null) {
+                livro.setLivroAutor(editarLivrDTO.livroAutor());
+            }
+            if (editarLivrDTO.livroAnoPublicacao() != null) {
+                livro.setLivroAnoPublicacao(editarLivrDTO.livroAnoPublicacao());
+            }
+            livrosRepositorio.save(livro);
+        }
+
+    }
 
 }
