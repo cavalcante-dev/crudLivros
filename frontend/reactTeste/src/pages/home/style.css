@@ -1,0 +1,215 @@
+div {
+  padding: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 2vh;
+}
+
+.containerFormulario {
+  grid-column: 1;
+  border-radius: 15px;
+  background-color: #89A194;
+  padding: 20px;
+  min-height: 55vh;
+  min-width: 50vh;
+  max-width: 50vh;
+  max-height: 55vh;
+}
+
+.containerFormulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.containerFormulario h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 2vh;
+  color: #322938;
+  margin-bottom: 3vh;
+}
+
+.containerFormulario input {
+  border-radius: 10px;
+  min-height: 4.5vh;
+  border: 2px solid #53675d;
+  padding: 15px;
+  padding-left: 15px;
+  background-color: #B8B49B;
+  color: #322938;
+  font-size: 2.6vh;
+  font-weight: bold;
+  transition: box-shadow 0.1s ease;
+  outline: none;
+}
+
+.containerFormulario input:focus {
+  border: 2px solid #322938;
+  box-shadow: inset -4px 4px 1px #8C8976;
+}
+
+/* BOTÃO DE CADASTRO */
+
+.containerFormulario button {
+  padding: 1.5vh;
+  font-size: 2.5vh;
+  margin-top: 5vh;
+  min-width: 40vh;
+}
+
+/* Botão Geral */
+
+button {
+  padding: 1vh;
+  border: 2px solid #322938;
+  border-radius: 50px;
+  font-size: 1.8vh;
+  font-weight: bold;
+  color: #322938;
+  background: #CFC89A;
+  box-shadow: 0px 8px 0px #322938;
+  align-self: center;
+  max-width: 11vh;
+  min-width: 11vh;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #bcb797;
+}
+
+button:active {
+  box-shadow: 0px 4px 0px;
+  transform: translateY(4px);
+}
+
+/* Container de livros cadastrados */
+
+#containerLivros {
+  grid: 2;
+  border-radius: 15px;
+  background-color: #89A194;
+  padding: 20px;
+  min-height: 95vh;
+  max-height: 95vh;
+  min-width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+#containerLivros input {
+  border-radius: 10px;
+  border: 2px solid #53675d;
+  padding: 15px;
+  margin-left: 10px;
+  padding-left: 15px;
+  background-color: #B8B49B;
+  color: #322938;
+  font-size: 2vh;
+  font-weight: bold;
+  outline: none;
+  width: 19vh;
+  transition: box-shadow 0.1s ease;
+  transition: width 0.1s ease;
+}
+
+#containerLivros input:focus {
+  border: 2px solid #322938;
+  box-shadow: inset -4px 4px 1px #8C8976;
+  width: 40%;
+}
+
+/* Grid aonde ficam os livros */
+
+#gridLivros {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 2vh;
+  row-gap: 3vh;
+}
+
+.livro {
+  border-radius: 15px;
+  background-color: #CFC89A;
+  padding: 20px;
+  flex-direction: column;
+  display: flex;
+  gap: 10px;
+  border: 2px solid #322938;
+  box-shadow: 8px 8px 0px #322938;
+  justify-content: center;
+  text-align: left;
+  max-width: 32vh;
+  min-width: 32vh;
+}
+
+.livro p {
+  font-size: 2.3vh;
+  padding-left: 1vh;
+}
+
+.livro b {
+  font-size: 2.1vh;
+}
+
+.livro div {
+  padding: 0;
+}
+
+.livro div button {
+  margin: 1vh;
+}
+
+/* Modal de edição de informação */
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#modalEditar {
+  border-radius: 15px;
+  background-color: #CFC89A;
+  border: 2px solid #322938;
+  box-shadow: 8px 8px 0px #322938;
+  align-self: center;
+  justify-self: center;
+  max-width: fit-content;
+  min-height: fit-content;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#modalEditar div {
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#modalEditar form button {
+  margin: 0;
+  margin-top: 1.5vh;
+}
+
