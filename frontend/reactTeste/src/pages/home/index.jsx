@@ -73,6 +73,26 @@ function Home() {
     getLivros()
   }, [])
 
+    useEffect(() => {
+    
+    const containerLivros = document.getElementById('containerLivros')
+
+    const mensagemExiste = document.querySelector('.mensagem-vazia')
+    if(mensagemExiste) {
+      mensagemExiste.remove()
+    } 
+
+    if(livros.length === 0 && containerLivros) {
+
+      const mensagem = document.createElement('p')
+      
+      mensagem.className = 'mensagem-vazia'
+      mensagem.textContent = "Nenhum Livro Cadastrado :("
+      containerLivros.appendChild(mensagem)           
+
+    }
+
+  }, [livros])
 
   return (
 

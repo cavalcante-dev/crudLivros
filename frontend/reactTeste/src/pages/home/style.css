@@ -213,3 +213,15 @@ dialog[open] {
   margin-top: 1.5vh;
 }
 
+.mensagem-vazia {
+  font-size: 4.5vh;
+  justify-self: center;
+  margin-top: 35vh;
+  font-weight: bold;
+  color: #322938;
+  background-color: #CFC89A;
+  padding: 20px;
+  border: 2px solid #322938;
+  box-shadow: 8px 8px 0px #322938;
+}
+
